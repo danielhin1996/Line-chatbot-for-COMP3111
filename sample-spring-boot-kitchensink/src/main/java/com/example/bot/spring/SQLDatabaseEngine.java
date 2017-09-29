@@ -26,14 +26,7 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 			
 		} catch (SQLException e) {
 			log.info("SQLException while reading file: {}", e.toString());
-		} finally {
-			try {
-				if(stmt != null)
-					stmt.close();
-			} catch (SQLException ex) {
-				log.info("SQLException while closing file: {}", ex.toString());
-			}
-		}
+		} 
 		if (result != null)
 			return result;
 		throw new Exception("NOT FOUND");
